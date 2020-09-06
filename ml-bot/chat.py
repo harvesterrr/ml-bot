@@ -11,6 +11,9 @@ while 1:
     arr = np.zeros(len(training.words), dtype=np.float32)
 
     inp = str(input("you: "))
+    
+    if inp == "exit":
+        break
 
     inp = token(inp)
 
