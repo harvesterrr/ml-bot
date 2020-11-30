@@ -94,7 +94,7 @@ if __name__ == '__main__':
 
     net = Net().to(device)
 
-    batch_size = 512
+    batch_size = 16
     ds = dataset()
     loader = DataLoader(dataset=ds, batch_size=batch_size, shuffle=True)
 
