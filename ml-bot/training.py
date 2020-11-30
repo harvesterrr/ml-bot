@@ -92,18 +92,16 @@ if __name__ == '__main__':
     else:
         device = torch.device("cpu")
 
-    # net
     net = Net().to(device)
 
-    # data
-    batch = 8
-    datas = dataset()
-    loader = DataLoader(dataset=datas, batch_size=batch, shuffle=True)
+    batch_size = 512
+    ds = dataset()
+    loader = DataLoader(dataset=ds, batch_size=batch_size, shuffle=True)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(net.parameters(), lr=0.001)
+    optimizer = optim.Adam(net.parameters(), lr=0.0001)
     
-    epochs = 1000
+    epochs = 20
     print("training model", epochs, "times")
     for epoch in range(epochs):
         for (words, labels) in loader:
