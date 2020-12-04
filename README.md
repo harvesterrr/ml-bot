@@ -1,5 +1,5 @@
 # ml-bot
-a machine-learning chatbot
+AI chatbot using machine-learning
 # model
 the model is a feedforward neural-network that is already trained but you can always train the neural-network on your own if you'd like that. the model is saved in model.pth. The input to the model is a numpy array (converted to a PyTorch Tensor) consisting of 1's and 0's. 1 if a word is in your sentence, 0 if it's not. The numpy array has the same size/length as the list with all of the words that the model can identify. 
 # intents
