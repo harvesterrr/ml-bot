@@ -90,6 +90,7 @@ if __name__ == '__main__':
     epochs = 20
     print("training model", epochs, "times")
     for epoch in range(epochs):
+        l = 0
         for (words, labels) in loader:
             words = words.to(device)
             labels = labels.to(device)
@@ -98,6 +99,8 @@ if __name__ == '__main__':
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
+            l+=loss.item()
+        print(epoch+1, "loss:", l)
     try:
         torch.save(net.state_dict(), path)
         print("pytorch model saved in:", path)
